@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Basic Babel setup"""
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config(object):
@@ -26,9 +26,7 @@ def get_locale():
 @app.route('/', strict_slashes=False)
 def index():
     """index function"""
-    home_title = _("home_title")
-    home_header = _("home_header")
-    return render_template('3-index.html', home_title=home_title, home_header=home_header)  # nopep8
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":
